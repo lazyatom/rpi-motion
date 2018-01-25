@@ -14,5 +14,6 @@ ExecStart=/usr/bin/docker run --name=rpi-motion \
 ExecStop=/usr/bin/docker stop -t 2 rpi-motion
 ExecStopPost=/usr/bin/docker rm -f rpi-motion
 TimeoutStartSec=10min
+
 [Install]
 WantedBy=multi-user.target

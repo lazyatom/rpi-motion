@@ -1,6 +1,8 @@
 FROM resin/raspberry-pi-python:3
 # FROM resin/raspberry-pi-python:3-onbuild
 
+# Bump
+
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends motion
 RUN apt-get clean

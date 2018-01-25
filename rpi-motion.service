@@ -1,0 +1,19 @@
+[Unit]
+Description=rpi-motion-docker
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=/usr/bin/docker pull arunderwood/rpi-motion
+ExecStart=/usr/bin/docker run --name=rpi-motion \
+    -p 8081:8081
+    -e TZ=America/Chicago \
+    --device=/dev/video0:/dev/video0 \
+    arunderwood/rpi-motion
+ExecStop=/usr/bin/docker stop -t 2 rpi-motion
+ExecStopPost=/usr/bin/docker rm -f rpi-motion
+TimeoutStartSec=10min
+
+[Install]
+WantedBy=multi-user.target

@@ -1,7 +1,7 @@
 FROM resin/raspberry-pi-python:3
 # FROM resin/raspberry-pi-python:3-onbuild
 
-# Bump
+RUN [ "cross-build-start" ]
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends motion
@@ -15,3 +15,5 @@ COPY motion.conf /etc/motion/motion.conf
 
 EXPOSE 8081
 ENTRYPOINT ["motion"]
+
+RUN [ "cross-build-end" ]

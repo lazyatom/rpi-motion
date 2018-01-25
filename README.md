@@ -14,11 +14,11 @@ This runs a motion-detecting camera connected to a Raspberry Pi. The videos are 
 
 ## Running
 
-If you're happy with the defaults, you can run this using the included script:
+If you're happy with the defaults, you can pull the latest docker image and run it:
 
     ./run.sh
 
-This will connect to a webcam via `/dev/video0` and start running as a daemon.
+This will connect to a webcam via `/dev/video0` and start running as a docker daemon.
 
 ## Bootstrapping a Pi
 
